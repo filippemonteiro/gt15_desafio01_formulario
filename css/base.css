@@ -1,31 +1,56 @@
+/* Container geral */
 body {
-  font-size: var(--font-size);
+  font-family: var(--font-family);
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.5;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: var(--spacing);
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.container {
-  width: 100%;
-  max-width: 420px;
+/* Botão de troca de tema */
+.theme-toggle-wrapper {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
-h1 {
-  font-size: 1rem;
-  margin-bottom: var(--spacing);
-  text-align: center;
+#theme-toggle {
+  display: none;
 }
 
-@media (max-width: 480px) {
-  body {
-    font-size: 1rem;
-  }
+.theme-toggle-label {
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
 
-  .container {
-    max-width: 100%;
-  }
+.icon {
+  display: none;
+}
+
+#theme-toggle:not(:checked) + .theme-toggle-label .icon-moon {
+  display: inline;
+}
+
+#theme-toggle:checked + .theme-toggle-label .icon-sun {
+  display: inline;
+}
+
+/* Tema claro com :checked no input */
+#theme-toggle:checked ~ * {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --input-bg: #ffffff;
+  --input-border: #ced4da;
+  --input-text: #212529;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+  --button-hover: #0056b3;
 }
