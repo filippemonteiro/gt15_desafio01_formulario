@@ -9,7 +9,7 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
   padding: 2rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; /* transição suave para o tema */
 }
 
 /* Botão de troca de tema */
@@ -53,4 +53,12 @@ body {
   --button-bg: #007bff;
   --button-text: #ffffff;
   --button-hover: #0056b3;
+}
+
+/* Transição de elementos durante a troca de tema */
+input,
+select,
+textarea,
+button {
+  transition: all 0.5s ease-in-out;
 }

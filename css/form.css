@@ -6,6 +6,11 @@
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* efeito de sombra ao passar o mouse */
 }
 
 h1 {
@@ -49,4 +54,78 @@ button {
 
 button:hover {
   background-color: var(--button-hover);
+}
+
+/* Mensagens de erro e sucesso */
+input.error,
+select.error,
+textarea.error {
+  border-color: #ff4d4d; /* borda vermelha para erro */
+}
+
+input.success,
+select.success,
+textarea.success {
+  border-color: #4CAF50; /* borda verde para sucesso */
+}
+
+.error-message,
+.success-message {
+  font-size: 0.875rem;
+  color: #ff4d4d; /* vermelho para erro */
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.success-message {
+  color: #4CAF50; /* verde para sucesso */
+}
+
+/* Foco nos inputs com animação suave */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--button-bg);
+  animation: pulse 0.6s ease;
+}
+
+/* Animação do foco */
+@keyframes pulse {
+  0% {
+    border-color: var(--button-bg);
+  }
+  50% {
+    border-color: #ffcc00; /* cor amarela para destaque */
+  }
+  100% {
+    border-color: var(--button-bg);
+  }
+}
+
+/* Formulário Responsivo */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+    width: 90%;
+  }
+
+  button {
+    width: 100%; /* largura total do botão em dispositivos pequenos */
+  }
+}
+
+/* Ajuste nas entradas para facilitar em dispositivos móveis */
+input,
+select,
+textarea {
+  font-size: 1.1rem;
+  padding: 0.8rem;
+}
+
+/* Melhorar o estilo dos placeholders */
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: var(--text-color);
+  font-style: italic;
 }
