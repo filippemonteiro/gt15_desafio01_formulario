@@ -1,0 +1,31 @@
+body {
+  font-size: var(--font-size);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing);
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+}
+
+h1 {
+  font-size: 1rem;
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+}
